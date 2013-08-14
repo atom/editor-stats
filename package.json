@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "main": "./lib/editor-stats",
   "description": "Display a graph of keyboard and mouse usage for the last 6 hours.",
+  "dependencies": {
+    "d3": "~3.2.8"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/atom/editor-stats.git"
