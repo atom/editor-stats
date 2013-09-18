@@ -1,7 +1,4 @@
-$ = require 'jquery'
-_ = require 'underscore'
-RootView = require 'root-view'
-EditorStats = require 'editor-stats/lib/editor-stats-view'
+{_, $, RootView} = require 'atom-api'
 
 describe "EditorStats", ->
   [editorStats] = []

@@ -1,7 +1,5 @@
-ScrollView = require 'scroll-view'
+{_, $, ScrollView} = require 'atom-api'
 d3 = require 'd3'
-_ = require 'underscore'
-$ = require 'jquery'
 
 module.exports =
 class EditorStatsView extends ScrollView
