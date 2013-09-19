@@ -1,4 +1,4 @@
-{_, $, ScrollView} = require 'atom-api'
+{_, $, ScrollView} = require 'atom'
 d3 = require 'd3'
 
 module.exports =
