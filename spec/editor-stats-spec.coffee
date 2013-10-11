@@ -13,7 +13,7 @@ describe "EditorStats", ->
 
   beforeEach ->
     window.rootView = new RootView
-    rootView.open('sample.js')
+    rootView.openSync('sample.js')
     editorStats = atom.activatePackage('editor-stats').mainModule.stats
 
   describe "when a keyup event is triggered", ->
