@@ -1,0 +1,9 @@
+'menu': [
+  'label': 'Packages'
+  'submenu': [
+    'label': 'Editor Stats'
+    'submenu': [
+      { 'label': 'Toggle', 'command': 'editor-stats:toggle' }
+    ]
+  ]
+]
