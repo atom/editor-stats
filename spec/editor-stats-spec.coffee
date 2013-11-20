@@ -5,16 +5,16 @@ describe "EditorStats", ->
 
   simulateKeyUp = (key) ->
     e = $.Event "keydown", keyCode: key.charCodeAt(0)
-    rootView.trigger(e)
+    atom.rootView.trigger(e)
 
   simulateClick = ->
     e = $.Event "mouseup"
-    rootView.trigger(e)
+    atom.rootView.trigger(e)
 
   beforeEach ->
-    window.rootView = new RootView
-    rootView.openSync('sample.js')
-    editorStats = atom.activatePackage('editor-stats').mainModule.stats
+    atom.rootView = new RootView
+    atom.rootView.openSync('sample.js')
+    editorStats = atom.packages.activatePackage('editor-stats').mainModule.stats
 
   describe "when a keyup event is triggered", ->
     beforeEach ->

@@ -92,10 +92,11 @@ class EditorStatsView extends ScrollView
       @attach()
 
   attach: ->
-    rootView.vertical.append(this)
+    atom.rootView.vertical.append(this)
     @draw()
 
   detach: ->
     super
+
     clearInterval(@updateInterval)
-    rootView.focus()
+    atom.rootView.focus()
