@@ -1,2 +1,5 @@
-'body':
-  'meta-alt-s': 'editor-stats:toggle'
+'.platform-darwin':
+  'cmd-alt-s': 'editor-stats:toggle'
+
+'.platform-win32':
+  'alt-ctrl-s': 'editor-stats:toggle'
