@@ -28,7 +28,7 @@ class EditorStatsView extends ScrollView
     @editorStats.empty()
     @x ?= d3.scale.ordinal().domain d3.range(@stats.hours * 60)
     @y ?= d3.scale.linear()
-    w = rootView.vertical.width()
+    w = workspaceView.vertical.width()
     h = @height()
     data = d3.entries @stats.eventLog
     max  = d3.max data, (d) -> d.value
@@ -92,11 +92,11 @@ class EditorStatsView extends ScrollView
       @attach()
 
   attach: ->
-    atom.rootView.vertical.append(this)
+    atom.workspaceView.vertical.append(this)
     @draw()
 
   detach: ->
     super
 
     clearInterval(@updateInterval)
-    atom.rootView.focus()
+    atom.workspaceView.focus()

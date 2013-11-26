@@ -6,7 +6,7 @@ module.exports =
 
   activate: ->
     @stats = new StatsTracker()
-    atom.rootView.command 'editor-stats:toggle', => @createView().toggle(@stats)
+    atom.workspaceView.command 'editor-stats:toggle', => @createView().toggle(@stats)
 
   deactivate: ->
     @editorStatsView = null

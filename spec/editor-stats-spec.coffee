@@ -1,19 +1,19 @@
-{_, $, RootView} = require 'atom'
+{_, $, WorkspaceView} = require 'atom'
 
 describe "EditorStats", ->
   [editorStats] = []
 
   simulateKeyUp = (key) ->
     e = $.Event "keydown", keyCode: key.charCodeAt(0)
-    atom.rootView.trigger(e)
+    atom.workspaceView.trigger(e)
 
   simulateClick = ->
     e = $.Event "mouseup"
-    atom.rootView.trigger(e)
+    atom.workspaceView.trigger(e)
 
   beforeEach ->
-    atom.rootView = new RootView
-    atom.rootView.openSync('sample.js')
+    atom.workspaceView = new WorkspaceView
+    atom.workspaceView.openSync('sample.js')
     editorStats = atom.packages.activatePackage('editor-stats').mainModule.stats
 
   describe "when a keyup event is triggered", ->

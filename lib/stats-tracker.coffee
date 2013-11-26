@@ -12,8 +12,8 @@ class StatsTracker
     while date < future
       @eventLog[@time(date)] = 0
 
-    atom.rootView.on 'keydown', => @track()
-    atom.rootView.on 'mouseup', => @track()
+    atom.workspaceView.on 'keydown', => @track()
+    atom.workspaceView.on 'mouseup', => @track()
 
   clear: ->
     @eventLog = {}
