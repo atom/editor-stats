@@ -1,5 +1,5 @@
 {_, $, ScrollView} = require 'atom'
-d3 = require 'd3'
+d3 = require 'd3-browserify'
 
 module.exports =
 class EditorStatsView extends ScrollView
