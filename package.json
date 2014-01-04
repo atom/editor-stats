@@ -1,6 +1,6 @@
 {
   "name": "editor-stats",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "main": "./lib/editor-stats",
   "description": "Display a graph of keyboard and mouse usage for the last 6 hours.",
   "dependencies": {
