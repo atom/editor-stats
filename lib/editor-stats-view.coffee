@@ -92,7 +92,7 @@ class EditorStatsView extends ScrollView
       @attach()
 
   attach: ->
-    atom.workspaceView.vertical.append(this)
+    atom.workspaceView.prependToBottom(this)
     @draw()
 
   detach: ->
