@@ -14,7 +14,10 @@ describe "EditorStats", ->
   beforeEach ->
     atom.workspaceView = new WorkspaceView
     atom.workspaceView.openSync('sample.js')
-    editorStats = atom.packages.activatePackage('editor-stats').mainModule.stats
+
+    waitsForPromise ->
+      atom.packages.activatePackage('editor-stats').then (pack) ->
+        editorStats = pack.mainModule.stats
 
   describe "when a keyup event is triggered", ->
     beforeEach ->
