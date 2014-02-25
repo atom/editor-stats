@@ -1,4 +1,5 @@
-{_, $, ScrollView} = require 'atom'
+_ = require 'underscore-plus'
+{$, ScrollView} = require 'atom'
 d3 = require 'd3-browserify'
 
 module.exports =

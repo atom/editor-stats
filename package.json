@@ -4,7 +4,8 @@
   "main": "./lib/editor-stats",
   "description": "Display a graph of keyboard and mouse usage for the last 6 hours.",
   "dependencies": {
-    "d3-browserify": "3.3.13"
+    "d3-browserify": "3.3.13",
+    "underscore-plus": "1.x"
   },
   "repository": "https://github.com/atom/editor-stats",
   "engines": {
