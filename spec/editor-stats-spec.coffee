@@ -14,7 +14,9 @@ describe "EditorStats", ->
 
   beforeEach ->
     atom.workspaceView = new WorkspaceView
-    atom.workspaceView.openSync('sample.js')
+
+    waitsForPromise ->
+      atom.workspaceView.open('sample.js')
 
     waitsForPromise ->
       atom.packages.activatePackage('editor-stats').then (pack) ->
