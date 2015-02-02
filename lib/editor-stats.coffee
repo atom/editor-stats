@@ -3,7 +3,7 @@ StatsTracker = require './stats-tracker'
 module.exports =
   activate: ->
     @stats = new StatsTracker()
-    atom.workspaceView.command 'editor-stats:toggle', =>
+    atom.commands.add 'atom-workspace', 'editor-stats:toggle', =>
       @createView().toggle(@stats)
 
   deactivate: ->

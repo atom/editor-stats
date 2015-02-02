@@ -1,22 +1,23 @@
 _ = require 'underscore-plus'
-{$, WorkspaceView} = require 'atom'
+{$} = require 'atom-space-pen-views'
 
 describe "EditorStats", ->
-  [editorStats] = []
+  editorStats = null
+  workspaceElement = null
 
   simulateKeyUp = (key) ->
     e = $.Event "keydown", keyCode: key.charCodeAt(0)
-    atom.workspaceView.trigger(e)
+    $(workspaceElement).trigger e
 
   simulateClick = ->
     e = $.Event "mouseup"
-    atom.workspaceView.trigger(e)
+    $(workspaceElement).trigger e
 
   beforeEach ->
-    atom.workspaceView = new WorkspaceView
+    workspaceElement = atom.views.getView(atom.workspace)
 
     waitsForPromise ->
-      atom.workspaceView.open('sample.js')
+      atom.workspace.open('sample.js')
 
     waitsForPromise ->
       atom.packages.activatePackage('editor-stats').then (pack) ->

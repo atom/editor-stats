@@ -1,3 +1,5 @@
+{$} = require 'atom-space-pen-views'
+
 module.exports =
 class StatsTracker
   startDate: new Date
@@ -12,8 +14,9 @@ class StatsTracker
     while date < future
       @eventLog[@time(date)] = 0
 
-    atom.workspaceView.on 'keydown', => @track()
-    atom.workspaceView.on 'mouseup', => @track()
+    workspaceView = atom.views.getView(atom.workspace)
+    $(workspaceView).on 'keydown', => @track()
+    $(workspaceView).on 'mouseup', => @track()
 
   clear: ->
     @eventLog = {}
