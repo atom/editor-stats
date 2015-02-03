@@ -87,17 +87,18 @@ class EditorStatsView extends ScrollView
     @bars.classed('max', (d, i) -> d.value == max)
 
   toggle: (@stats) ->
-    if @hasParent()
+    if @panel?.isVisible()
       @detach()
     else
       @attach()
 
   attach: ->
-    atom.workspace.addBottomPanel(item: this)
+    @panel ?= atom.workspace.addBottomPanel(item: this)
+    @panel.show()
     @draw()
 
   detach: ->
-    super
+    @panel?.hide()
 
     clearInterval(@updateInterval)
     $(atom.views.getView(atom.workspace)).focus()
